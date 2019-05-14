@@ -1,6 +1,6 @@
 <template>
     <div class="login-wrap">
-         <i class="el-icon-lx-people grid-con-icon"></i>
+         
         <div class="ms-login">
             <div class="ms-title">后台管理系统</div>
             <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="ms-content">

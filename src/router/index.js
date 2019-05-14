@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import login from '@/components/pages/login'
+
 
 Vue.use(Router)
 
@@ -9,12 +8,39 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/recommend'
+    },
+    {
+      path: '/',
+      name: 'Home',
+      component: resolve => require(['../components/common/Home.vue'], resolve),
+      meta:{},
+      children:[
+        {
+          path: '/recommend',
+          component: resolve => require(['../components/pages/recommend.vue'], resolve),
+          name: 'recommend',
+        },
+        {
+          path: '/singer',
+          component: resolve => require(['../components/pages/singer.vue'], resolve),
+          name: 'singer',
+        },
+        {
+          path: '/rankList',
+          component: resolve => require(['../components/pages/rankList.vue'], resolve),
+          name: 'rankList',
+        },
+        {
+          path: '/search',
+          component: resolve => require(['../components/pages/search.vue'], resolve),
+          name: 'search',
+        }
+      ]
     },
     {
       path: '/login',
-      // name: 'login',
+      name: 'login',
       component:  resolve => require (['../components/pages/login.vue'], resolve)
     }
   ]
