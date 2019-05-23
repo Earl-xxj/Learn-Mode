@@ -7,9 +7,6 @@
                 <router-view></router-view>
             </transition>    
         </keep-alive>
-        <!-- <recommend></recommend> -->
-        <h1> this is home page</h1>
-        
     </div>
 </template>
 
@@ -30,5 +27,10 @@ import Tabs from '../pages/Tabs.vue'
 
 .fade-enter,.fade-leave-active{
     opacity: 0;
+}
+.home{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 </style>

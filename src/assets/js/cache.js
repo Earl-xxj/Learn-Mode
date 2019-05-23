@@ -48,7 +48,7 @@ function deleteFromArray(arr,compare){
  }
 
  export function loadSearch(){
-    console.log(storage.get(search_key, []),'loadSearch')
+    console.log(storage.get(search_key, []),'loadSearch in cache.js')
     return storage.get(search_key, []);
  }
 
@@ -91,4 +91,13 @@ export function savePlay(song){
 
 export function loadPlay () {
     return storage.get(play_key, [])
-  }
+}
+
+export function deleteFavorite (song) {
+    let songs = storage.get(FAVORITE_KEY, [])
+    deleteFromArray(songs, (item) => {
+        return song.id === item.id
+    })
+    storage.set(FAVORITE_KEY, songs)
+    return songs
+}

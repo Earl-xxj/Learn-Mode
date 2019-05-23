@@ -30,8 +30,9 @@ $color-theme : #ffcd32;
 .tabs{
     display: flex;
     height: 44px;
-    line-height: 44px;
+    line-height: 45px;
     background: #222;
+    z-index: 999;
     .tab_items{
         flex: 1;
         text-align: center;

@@ -1,4 +1,4 @@
-import {HOST} from '../assets/js/config'
+// import {HOST} from '../assets/js/config'
 import { commonParams } from './config'
 import axios from 'axios'
 import { mkdir } from 'fs';
@@ -10,11 +10,6 @@ export function getSong (id) {
   return axios.get(url)
 }
 
-// export function getLyric (id) {
-//   const url = HOST + `/lyric?id=${id}`
-
-//   return axios.get(url)
-// }
 
 export function getLyric(mid){
     const url = '/api/lyric'

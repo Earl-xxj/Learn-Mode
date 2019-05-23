@@ -6,8 +6,8 @@
 
 <script>
 // 封装一个scroll组件 引入better-scroll npm i better-scroll -S
-import BSscroll from 'better-scroll'
-import { setTimeout } from 'timers';
+import BScroll from 'better-scroll'
+// import { setTimeout } from 'timers';
     export default {
         props:{
             /**
@@ -53,6 +53,9 @@ import { setTimeout } from 'timers';
            }
 
         },
+        data(){
+            return{}
+        },
         mounted(){
             // 保证在DOM渲染完毕后初始化better-scroll
             setTimeout(() =>{
@@ -65,7 +68,7 @@ import { setTimeout } from 'timers';
                     return
                 }
                 // better-scroll的初始化
-                this.scroll = new BSscroll(this.$refs.wrapper,{
+                this.scroll = new BScroll(this.$refs.wrapper,{
                     probeType: this.probeType,
                     click: this.click,
                     scrollX: this.scrollX
@@ -94,10 +97,10 @@ import { setTimeout } from 'timers';
                     })
                 }
             },
-            disable(){ // 代理better-scroll的disable方法
+            disabled(){ // 代理better-scroll的disable方法
                 this.scroll && this.scroll.disable()
             },
-            enable(){
+            enabled(){
                 this.scroll && this.scroll.enable()
             },
             refresh(){
@@ -114,7 +117,7 @@ import { setTimeout } from 'timers';
         watch:{
             // 监听数据的变化，延时refreshDelay时间后调用refresh方法重新计算，保证滚动效果正常
             data(){
-                steTimeout(() =>{
+                setTimeout(() =>{
                     this.refresh()
                 }, this.refreshDelay)
             }

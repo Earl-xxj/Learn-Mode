@@ -1,7 +1,7 @@
 /***
  * 当取到值的时候做简单的转换
  */
-import {getSong} from '../api/song'
+// import {getSong} from '../api/song'
 
 export const musicList = state => state.musicList
 
@@ -11,7 +11,7 @@ export const playing = state => state.playing
 
 export const fullScreen = state => state.fullScreen
 
-export const playlist = sate => sate.playlist
+export const playlist = state => state.playlist
 
 export const sequenceList = state => state.sequenceList
 
@@ -19,8 +19,8 @@ export const mode = state => state.mode
 
 export const currentIndex = state => state.currentIndex
 
-export const currentSong = (state) =>{
-    return state.playlist[state.currentIndex] || {} 
+export const currentSong = (state) => {
+  return state.playlist[state.currentIndex] || {}
 }
 
 export const disc = state => state.disc
@@ -33,9 +33,10 @@ export const favoriteList = state => state.favoriteList
 
 export const recentPlay = state => state.recentPlay
 
-export const currentSongUrl = (state) =>{
-    getSong(state.playlist[state.currentIndex]).then((res) =>{
-        console.log(state.playlist,'getter.state.playlist');
-        return res.data.data.url || '';
-    })
-}
+
+// export const currentSongUrl = (state) =>{
+//     getSong(state.playlist[state.currentIndex]).then((res) =>{
+//         console.log(state.playlist,'getter.state.playlist');
+//         return res.data.data.url || '';
+//     })
+// }

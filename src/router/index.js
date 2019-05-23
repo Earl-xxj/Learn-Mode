@@ -25,6 +25,13 @@ export default new Router({
           path: '/singer',
           component: resolve => require(['../components/pages/singer.vue'], resolve),
           name: 'singer',
+          children:[
+            {
+              path: ':id',
+              component: resolve => require(['../components/pages/singerDetail.vue'], resolve),
+              name: 'singerDetail',
+            }
+          ]
         },
         {
           path: '/rankList',
@@ -35,7 +42,8 @@ export default new Router({
           path: '/search',
           component: resolve => require(['../components/pages/search.vue'], resolve),
           name: 'search',
-        }
+        },
+        
       ]
     },
     {
